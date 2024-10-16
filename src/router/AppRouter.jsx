@@ -1,19 +1,20 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import PrivateRouter from "./PrivateRouter";
-import Dashboard from "../pages/Dashboard";
+// ! sayfaların importları yapılacak
+// ! private router eklenecek sayfalar olacak
 
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path="stock" element={<PrivateRouter />}>
-          <Route path="" element={<Dashboard />} />
-        </Route>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="/newblog" element={<NewBlog />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/about" element={<About />} />
+        
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
