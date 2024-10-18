@@ -1,9 +1,8 @@
 import axios from 'axios';
-import React from 'react'
 import { useSelector } from 'react-redux';
 
 const useAxios = () => {
-const {token } = useSelector(state => state.auth)
+const { token } = useSelector(state => state.auth)
 
 // ! kendisi ekliyor sonuna endpointi
     const axiosToken = axios.create({
