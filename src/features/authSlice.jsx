@@ -12,14 +12,23 @@ const authSlice = createSlice({
 
   reducers: {
     fetchStart: (state) => {
+      state.loading = true;
+
     },
     loginSuccess: (state, { payload }) => {
+      state.loading = false;
     },
     logoutSuccess: (state, {payload}) => {
+      state.loading = false;
+
     },
     fetchFail: (state) => {
+      state.loading = false;
+
     },
     registerSuccess: (state, { payload }) => {
+      state.loading = false;
+
     },
   },
 });
